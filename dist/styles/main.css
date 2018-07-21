@@ -920,9 +920,9 @@ hr {
 }
 
 .carousel.abouts {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
-    height: 60vh;
+    height: 50vh;
 }
 
 .carousel img {
@@ -966,7 +966,7 @@ hr {
 }
 
 .carousel.abouts .carousel-inner .carousel-item img {
-    height: 60vh;
+    height: 50vh;
     width: 100%;
 }
 
@@ -1341,11 +1341,6 @@ hr {
         border-radius: 5px;
     }
     /* .carousel */
-    .carousel.abouts {
-        width: 80%;
-        margin: 0 auto;
-        height: 50vh;
-    }
     .carousel.abouts ol.carousel-indicators.forabout {
         position: absolute;
         right: 0;
