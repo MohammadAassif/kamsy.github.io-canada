@@ -1638,6 +1638,11 @@ hr {
         margin-top: 0;
         text-align: center;
     }
+    .about-us.container {
+        width: 80%;
+        margin: auto;
+        padding: 50px 15px;
+    }
 }
 
 @keyframes jump {
