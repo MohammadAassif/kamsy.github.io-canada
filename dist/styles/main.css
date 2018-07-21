@@ -920,7 +920,7 @@ hr {
 }
 
 .carousel.abouts {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     height: 60vh;
 }
@@ -1094,11 +1094,6 @@ hr {
         width: 95%;
         margin: 40px auto 0;
     }
-    .carousel.abouts {
-        width: 100%;
-        margin: 0;
-        height: 40vh;
-    }
     .carousel.abouts ol.carousel-indicators.forabout {
         position: absolute;
         right: 0;
@@ -1117,10 +1112,6 @@ hr {
         width: 100%;
         overflow: hidden;
         height: 100%;
-    }
-    .carousel.abouts .carousel-inner .carousel-item img {
-        height: 40vh;
-        width: 100%;
     }
     /* footer */
     .footer .foot {
@@ -1351,8 +1342,8 @@ hr {
     }
     /* .carousel */
     .carousel.abouts {
-        width: 100%;
-        margin: 0;
+        width: 80%;
+        margin: 0 auto;
         height: 50vh;
     }
     .carousel.abouts ol.carousel-indicators.forabout {
@@ -1618,6 +1609,27 @@ hr {
         height: 400px;
         width: 100%;
         border-radius: 5px;
+    }
+    .carousel.abouts {
+        width: 100%;
+        margin: 0;
+        height: 300px;
+    }
+    .carousel.abouts .carousel-inner .carousel-item img {
+        height: 300px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+    .carousel.abouts {
+        width: 70%;
+        margin: 0 auto;
+        height: 300px;
+    }
+    .carousel.abouts .carousel-inner .carousel-item img {
+        height: 300px;
+        width: 100%;
     }
 }
 
