@@ -1,0 +1,92 @@
+var AWS = require('aws-sdk');
+var ses = new AWS.SES();
+ 
+var RECEIVER = 'charles@goshenconsulting.ca';
+var SENDER = 'charles@goshenconsulting.ca';
+var client_response = "Thanks Bitch";
+var clientEmail;
+
+exports.handler = function (event, context) {
+    console.log('Received event:', event);
+    
+        sendEmail(event, function (err, data) {
+            context.done(err, null);
+
+            // sendto_client (event, function (err, data) {
+            //     context.done(err, null);
+            // })
+        });
+    
+        
+
+};
+
+// 1. send to Charles
+function sendEmail (event, done) {
+    var params2 = {
+        Destination: {
+            ToAddresses: [
+                event.email
+            ]
+        },
+        Message: {
+            Body: {
+                Text: {
+                    Data: client_response,
+                    Charset: 'UTF-8'
+                }
+            },
+            Subject: {
+                Data: `Email Received: Charles`,
+                Charset: 'UTF-8'
+            }
+        },
+        Source: SENDER
+    };
+    var params = {
+        Destination: {
+            ToAddresses: [
+                RECEIVER
+            ]
+        },
+        Message: {
+            Body: {
+                Text: {
+                    Data: 'name: ' + event.name + '\nphone: ' + event.phone + '\nemail: ' + event.email + '\ndesc: ' + event.desc,
+                    Charset: 'UTF-8'
+                }
+            },
+            Subject: {
+                Data: 'Website Referral Form: ' + event.name,
+                Charset: 'UTF-8'
+            }
+        },
+        Source: event.email
+    };
+    ses.sendEmail(params, done);
+    ses.sendEmail(params2, done);
+}
+// 2. send to Client
+// function sendto_client (event, done) {
+//     var params = {
+//         Destination: {
+//             ToAddresses: [
+//                 event.email
+//             ]
+//         },
+//         Message: {
+//             Body: {
+//                 Text: {
+//                     Data: "hey",
+//                     Charset: 'UTF-8'
+//                 }
+//             },
+//             Subject: {
+//                 Data: "My Name",
+//                 Charset: 'UTF-8'
+//             }
+//         },
+//         Source: SENDER
+//     };
+//     ses.sendEmail(params, done);
+// }
