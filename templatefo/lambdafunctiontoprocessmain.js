@@ -3,7 +3,7 @@ var ses = new AWS.SES();
  
 var RECEIVER = 'ibroniagara@gmail.com';
 var SENDER = 'ibroniagara@gmail.com';
-var client_response = "Thanks Bitch";
+var client_response = "Thanks Bro";
 var clientEmail;
 var response = {
  "isBase64Encoded": false,
